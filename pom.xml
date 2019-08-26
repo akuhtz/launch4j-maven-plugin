@@ -21,7 +21,7 @@
     <groupId>org.bidib.com.akathist.maven.plugins.launch4j</groupId>
     <artifactId>launch4j-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.7.26-SNAPSHOT</version>
+    <version>1.7.26</version>
 
     <name>Maven Launch4j Plugin</name>
     <description>This plugin creates Windows executables from Java jar files using the Launch4j utility.</description>
@@ -42,7 +42,7 @@
     </licenses>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:lukaszlenart/launch4j-maven-plugin.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:akuhtz/launch4j-maven-plugin.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
@@ -172,6 +172,57 @@
                 </pluginManagement>
             </build>
         </profile>
+        
+		<profile>
+			<id>full-release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.3</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+                        <!-- add this to disable checking under JDK8 -->
+                        <configuration>
+                            <doclint>none</doclint>
+                        </configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
     </profiles>
 
     <reporting>
