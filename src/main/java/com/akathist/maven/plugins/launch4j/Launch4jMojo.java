@@ -68,8 +68,8 @@ public class Launch4jMojo extends AbstractMojo {
 
     private static final String LAUNCH4J_ARTIFACT_ID = "launch4j";
 
-    private static final String LAUNCH4J_GROUP_ID = "net.sf.launch4j";
-
+    private static final String LAUNCH4J_GROUP_ID = "org.bidib.net.sf.launch4j";
+    
     /**
      * The dependencies required by the project.
      */
