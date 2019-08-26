@@ -15,6 +15,18 @@ Please check [this](src/main/resources/README.adoc) document for more detailed i
 
 # Version Notes
 
+## Version notes 1.7.25
+- creates parent directories of an obj file, see [#99](../../pull/99) 
+
+## Version notes 1.7.24
+- adds a `threadSafe` flag to the Mojo to properly mark that the plugin is thread safe, see [#72](../../issues/72) 
+
+## Version notes 1.7.23
+- adds a `parallelExecution` flag that will allow to run only one instance of the plugin in the given time, see [#72](../../issues/72) 
+
+## Version notes 1.7.22
+- upgrades to Launch4j version 3.12, see [#75](../../issues/75) 
+
 ## Version notes 1.7.21
 - fixes issue with detecting OSX, see [#58](../../issues/58) 
 
@@ -34,7 +46,7 @@ Please check [this](src/main/resources/README.adoc) document for more detailed i
 - detects different OSX versions to properly use proper binary bundle, see [#54](../../pull/54)
 
 ## Version notes 1.7.15
-- allows override some properties loaded from an extrnal Launch4j config file, see [#49](../../issues/49)
+- allows override some properties loaded from an external Launch4j config file, see [#49](../../issues/49)
 
 ## Version notes 1.7.14
 - fixes issue with setting `language`, see [#50](../../issues/50)
